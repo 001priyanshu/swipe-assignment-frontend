@@ -22,6 +22,10 @@ const InvoiceList = () => {
       navigate(`/create/${copyId}`);
     }
   };
+  const handleBulkClick = () => {
+    
+    navigate('/bulkEdit', { state: { idList: invoiceList } });
+  }
 
   return (
     <Row>
@@ -46,6 +50,9 @@ const InvoiceList = () => {
                 <div className="d-flex gap-2">
                   <Button variant="dark mb-2 mb-md-4" onClick={handleCopyClick}>
                     Copy Invoice
+                  </Button>
+                  <Button variant="secondary mb-2 mb-md-4" onClick={handleBulkClick}>
+                    Bulk Edit
                   </Button>
 
                   <input
